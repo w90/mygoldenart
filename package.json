@@ -1,0 +1,30 @@
+{
+  "name": "mygoldenart",
+  "version": "1.0.0",
+  "description": "Site for 'My Golden Art's founder - Anna S.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/w90/mygoldenart.git"
+  },
+  "keywords": [
+    "art"
+  ],
+  "author": "Leszek Rutkowski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/w90/mygoldenart/issues"
+  },
+  "homepage": "https://github.com/w90/mygoldenart#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "eslint": "^4.1.1",
+    "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "chalk": "^2.0.1"
+  }
+}
