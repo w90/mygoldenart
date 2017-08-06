@@ -4,7 +4,7 @@
   "description": "Site for 'My Golden Art's founder - Anna S.",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint"
+    "lint": "eslint **/*.js"
   },
   "repository": {
     "type": "git",

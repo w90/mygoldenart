@@ -47,9 +47,10 @@
 
         .mga-header__logo-box {
             position: relative;
-            width: 400px;
-            height: 400px;
+            /*width: 400px;*/
+            /*height: 400px;*/
             margin: 0 auto;
+            transform: scale( .45 );
         }
 
         .mga-header__logo-box::before {
@@ -112,10 +113,14 @@
             filter: brightness(100%);
         }
 
+        .mga-section--header {
+            margin-bottom: 100px;
+        }
+
         .mga-section--about {
             background-image: url(img/mga-img-bg-1-glitter.png);
             z-index: 0;
-            height: 450px;
+            /*height: 450px;*/
             top: 0px;
             margin-bottom: -210px;
         }
@@ -123,23 +128,22 @@
         .mga-section--gallery {
             background-image: url(img/mga-img-bg-2-wood.png);
             z-index: 10;
-            height: 800px;
-            top: 0px;
-
+            /*height: 800px;*/
+            margin-bottom: -205px;
         }
 
         .mga-section--contact {
             background-image: url(img/mga-img-bg-3-brush.png);
             z-index: 20;
-            height: 500px;
-            top: 0px;
+            /*height: 500px;*/
+            margin-bottom: -110px;
         }
 
         .mga-section--footer-cover {
             background-image: url(img/mga-img-bg-4-stars.png);
             z-index: 30;
-            height: 600px;
-            top: 0px;
+            height: 450px;
+            top: 0
         }
 
 
@@ -159,25 +163,40 @@
 
         }
 
+        .mga-section__card--bookmark {
+            height: 260px;
+        }
+
         .mga-section__card--about {
             z-index: 5;
             top: 0px;
             width: 100%;
             height: auto;
-            margin-top: 75px;
-            background-position: right top;
+            /*margin-top: 75px;*/
+            background-position: right bottom;
         }
-
- /* Card - Gallery ================= */
-/* ================================ */
 
         .mga-section__card--gallery {
             z-index: 15;
             top: 0px;
             width: 100%;
-            height: 600px;
-            background-position: left bottom;
+            /*height: 600px;*/
+            background-position: left top;
         }
+
+        .mga-section__card--contact {
+            z-index: 25;
+            top: 0px;
+            width: 200px;
+            /*height: 400px;*/
+            background-position: center center
+        }
+
+
+ /* Card - Gallery ================= */
+/* ================================ */
+
+
 
         .mga-section__gallery-box {
             text-align:center;
@@ -234,14 +253,6 @@
 
 
 
-        .mga-section__card--contact {
-            z-index: 25;
-            top: 0px;
-            width: 200px;
-            height: 400px;
-            background-position: center center
-        }
-
         .mga-section__heading {
             text-align: center;
             color: gold;
@@ -282,7 +293,7 @@
         .mga-section__graphics {
             position: absolute;
             top: 65px;
-            left: calc(50% + 7px);
+            left: calc(50% - 77px);
             width: 75px;
         }
 
@@ -293,9 +304,9 @@
         }
 
         .mga-section__graphics-heart:hover {
-            transform: rotate(-3deg);
+            /*transform: rotate(-3deg);*/
             cursor: crosshair;
-            filter: brightness(.9);
+            filter: brightness(.8);
         }
 
         .mga-section__text--heart {
@@ -407,6 +418,13 @@
 
         <div class="mga-section mga-section--about">
             <div class="row">
+
+                <div class="col-md-3 offset-md-2">
+                    <div class="mga-section__card mga-section__card--contact mga-section__card--bookmark">
+                        <h2>About <span class="sr-only">with mygoldenart creator - Anna</span></h2>
+                    </div>
+                </div>
+
                 <div class="offset-xs-2 col-xs-8 ">
                     <div class="mga-section__card mga-section__card--about">
                         <h2 class="mga-section__heading">About <span class="sr-only">mygoldenart creator - Anna</span></h2>
@@ -427,10 +445,19 @@
                 <img id="img-heart" class="mga-section__graphics-heart" src="img/mga-img-g-1-heart.png">
             </div>
             <div class="row">
+
+                <div class="col-md-3 offset-md-7">
+                    <div class="mga-section__card mga-section__card--contact mga-section__card--bookmark">
+                        <h2>Gallery <span class="sr-only">with mygoldenart creator - Anna</span></h2>
+                    </div>
+                </div>
+
                 <div class="offset-xs-1 col-xs-10">
                     <div class="mga-section__card mga-section__card--gallery">
-                        <div class="mga-section__gallery-box mga_section__underline clearfix">
 
+                        <h2 class="mga-section__heading">Gallery <span class="sr-only">with works of Anna</span></h2>
+
+                        <div class="mga-section__gallery-box mga_section__overline clearfix">
 
                             <div class="mga-gallery-wrapper">
                                 <div class="mga-section__gallery-item mga-section__gallery-item--double">
@@ -448,10 +475,9 @@
                                 <div class="mga-section__gallery-item mga-section__gallery-item--double">
                                     <img class="mga-section__artwork" src="img/art/mga-art-2-muchomorki.jpg" alt="Muchomorki">
                                 </div>
-                            </div>
 
+                            </div>
                         </div>
-                        <h2 class="mga-section__heading">Gallery <span class="sr-only">with works of Anna</span></h2>
                     </div>
                 </div>
             </div>
@@ -467,7 +493,7 @@
 
             <div class="row">
                 <div class="col-md-3 offset-md-2">
-                    <div class="mga-section__card mga-section__card--contact">
+                    <div class="mga-section__card mga-section__card--contact mga-section__card--bookmark">
                         <h2>Contact <span class="sr-only">with mygoldenart creator - Anna</span></h2>
                     </div>
                 </div>
