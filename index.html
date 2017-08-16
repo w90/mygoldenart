@@ -102,6 +102,7 @@
             position: relative;
             top: 0;
             width: 100%;
+            min-height: 300px;
             background-size: contain;
             background: transparent no-repeat top;
             filter: brightness(70%);
@@ -121,29 +122,29 @@
             background-image: url(img/mga-img-bg-1-glitter.png);
             z-index: 0;
             /*height: 450px;*/
-            top: 0px;
-            margin-bottom: -210px;
+            /*top: 0px;*/
+            /*margin-bottom: -210px;*/
         }
 
         .mga-section--gallery {
             background-image: url(img/mga-img-bg-2-wood.png);
             z-index: 10;
             /*height: 800px;*/
-            margin-bottom: -205px;
+            /*margin-bottom: -205px;*/
         }
 
         .mga-section--contact {
             background-image: url(img/mga-img-bg-3-brush.png);
             z-index: 20;
             /*height: 500px;*/
-            margin-bottom: -110px;
+            /*margin-bottom: -110px;*/
         }
 
         .mga-section--footer-cover {
             background-image: url(img/mga-img-bg-4-stars.png);
             z-index: 30;
             height: 450px;
-            top: 0
+            /*top: 0;*/
         }
 
         .mga-section__content {
@@ -166,6 +167,7 @@
             border-top: 1px solid #67624b;
             border-radius: 20px;
             box-shadow: 0px 0px 20px 0px black;
+            text-align: center;
             color: white;
             overflow: hidden;
 
@@ -195,7 +197,7 @@
         .mga-section__card--contact {
             z-index: 25;
             top: 0px;
-            width: 200px;
+            /*width: 200px;*/
             /*height: 400px;*/
             background-position: center center
         }
@@ -375,6 +377,10 @@
     color: gold;
 }
 
+.u-hidden {
+    display: none;
+}
+
 
 
  /* ================================ */
@@ -405,7 +411,7 @@
 
 <!-- Header -->
 
-    <header class="mga-section mga-section--header">
+    <header class="mga-section--header">
 
         <div class="row">
             <div class="col-12">
@@ -417,7 +423,7 @@
                     <img class="mga-header__logo-img mga-header__logo-img--a" src="img/logo/mga-img-logo-3-a-20.png"
                          alt="A - MYGOLDENART">
                 </div>
-                <h1 class="mga_header__title">MY<span class="u-color-gold">GOLDEN</span>ART</h1>
+                <h1 class="mga_header__title u-hidden">MY<span class="u-color-gold">GOLDEN</span>ART</h1>
             </div>
         </div>
     </header><!--/mga-header-->
@@ -427,7 +433,7 @@
         <div class="mga-section mga-section--about">
             <div class="row">
 
-                <div class="col-md-3 offset-md-2">
+                <div class="col-md-3 offset-md-1 u-hidden">
 
                     <div class="mga-section__card mga-section__card--contact mga-section__card--bookmark">
                         <h2>About <span class="sr-only">with mygoldenart creator - Anna</span></h2>
@@ -461,13 +467,10 @@
 <!-- Gallery -->
 
         <div class="mga-section mga-section--gallery">
-            <div class="mga-section__graphics">
-                <img id="img-heart" class="mga-section__graphics-heart" src="img/mga-img-g-1-heart.png">
-            </div>
             <div class="row">
 
-                <div class="col-md-3 offset-md-7">
-                    <div class="mga-section__card mga-section__card--gallery mga-section__card--bookmark">
+                <div class="col-md-3 offset-md-4">
+                    <div class="mga-section__card mga-section__card--gallery mga-section__card--bookmark u-hidden">
 
                         <h2 class="mga-section__heading">Gallery <span class="sr-only">with works of Anna</span></h2>
 
@@ -495,6 +498,9 @@
                     </div>
                 </div>
             </div>
+            <div class="mga-section__graphics">
+                <img id="img-heart" class="mga-section__graphics-heart" src="img/mga-img-g-1-heart.png">
+            </div>
 
         </div><!--/mga-gallery-->
 
@@ -506,7 +512,34 @@
         <div class="mga-section mga-section--contact">
 
             <div class="row">
-                <div class="col-md-3 offset-md-2">
+
+                <div class="offset-md-1 col-md-3">
+                    <div class="mga-section__card mga-section__card--contact mga-section__card--bookmark">
+                        <h2>About <span class="sr-only">with mygoldenart creator - Anna</span></h2>
+
+                        <div class="mga-section__content">
+                            <p class="mga-section__text mga_section__overline">Anna is an artist based in Warsaw, Poland.</p>
+                            <p class="mga-section__text">Her art is an expression of gratitude and universal <span id="txt-love" class="mga-section__text--heart">love.</span></p>
+                            <p class="mga-section__text">She portrays everything with natural honesty and sensitivity.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="mga-section__card mga-section__card--contact mga-section__card--bookmark">
+                        <h2>Gallery <span class="sr-only">with mygoldenart creator - Anna</span></h2>
+
+                        <div class="mga-section__content">
+                            <p class="mga-section__text mga_section__overline">Anna is an artist based in Warsaw, Poland.</p>
+                            <p class="mga-section__text">Her art is an expression of gratitude and universal <span id="txt-love" class="mga-section__text--heart">love.</span></p>
+                            <p class="mga-section__text">She portrays everything with natural honesty and sensitivity.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-3">
                     <div class="mga-section__card mga-section__card--contact mga-section__card--bookmark">
                         <h2>Contact <span class="sr-only">with mygoldenart creator - Anna</span></h2>
 
