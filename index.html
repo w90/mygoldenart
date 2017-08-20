@@ -5,6 +5,7 @@
     <title>MYGOLDENART</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 
     <style>
 
@@ -43,14 +44,38 @@
             text-decoration: none;
         }
 
+        .mga_header_nav-item {
+            font-size: 1.25rem;
+            line-height: 2rem;
+            color: rgba(255, 255, 255, 0);
+            font-family: 'Raleway', sans-serif;
+            text-shadow: -2px 2px 3px gold;
+            text-transform: uppercase;
+            filter: blur(.5px);
+            transition: all .4s ease;
+            opacity: .7;
+        }
+
+
+        .mga_header_nav-item:hover {
+            color: rgba(255, 255, 255, 1);
+            cursor: pointer;
+            opacity: 1;
+        }
+
         /* Header with Logo =============== */
         /* ================================ */
 
         .mga-header__logo-box {
-            position: relative;
-            width: 200px;
-            height: 200px;
-            margin: 0 auto;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: -60px;
+            transition: all .4s ease;
+    transform: translateX(-50%);
+    left: 50%;
+    filter: blur(4px);
+            pointer-events: all;
         }
 
         .mga-header__logo-box::before {
@@ -94,15 +119,46 @@
             z-index: 20;
         }
 
-        .mga-header__logo-box:hover .mga-header__logo-img--g {
-            transform: rotate(418deg);
-        }
-
         .mga_header__title {
             text-align: center;
             color: white;
             font-size: 2rem;
             font-family: 'Raleway', sans-serif;
+            text-shadow: -2px 2px 3px gold;
+            position: relative;
+            filter: blur(1px);
+            z-index: 50;
+            transition: all .4s ease;
+            opacity: 1;
+        }
+
+        .mga-header__brand:hover .mga-header__logo-img--g,
+        .mga-header__logo-box:hover .mga-header__logo-img--g {
+            transform: rotate(418deg);
+        }
+
+         .mga-header__brand:hover .mga_header__title {
+             opacity: .3;
+             filter: blur(2px);
+         }
+
+         .mga-header__brand:hover .mga-header__logo-box {
+             filter: blur(0);
+         }
+
+        /*.mga_header__title:hover {*/
+            /*filter: blur(0);*/
+        /*}*/
+
+        .mga-section--footer-cover .mga-header__logo-box {
+            top: -35px;
+            filter: blur(1px);
+        }
+
+        .mga_header__title:hover,
+        .mga-header__logo-box:hover  {
+            filter: blur(0);
+            /*transform: translateY(10px);*/
         }
 
         /* Sections======================== */
@@ -112,7 +168,7 @@
             position: relative;
             top: 0;
             width: 100%;
-            min-height: 300px;
+            /*min-height: 300px;*/
             background-size: contain;
             background: transparent no-repeat top;
             filter: brightness(70%);
@@ -125,11 +181,15 @@
         }
 
         .mga-section--header {
+            margin-top: 90px;
+            margin-bottom: 45px;
             /*margin-bottom: 100px;*/
         }
 
         .mga-section--about {
             background-image: url(img/mga-img-bg-1-glitter.png);
+            margin-top: 70px;
+            /*margin-bottom: 165px;*/
             z-index: 0;
             /*height: 450px;*/
             /*top: 0px;*/
@@ -138,6 +198,7 @@
 
         .mga-section--gallery {
             background-image: url(img/mga-img-bg-2-wood.png);
+            margin-top: -235px;
             z-index: 10;
             /*height: 800px;*/
             /*margin-bottom: -205px;*/
@@ -146,6 +207,7 @@
         .mga-section--contact {
             background-image: url(img/mga-img-bg-3-brush.png);
             z-index: 20;
+            margin-top: -205px;
             /*height: 500px;*/
             /*margin-bottom: -110px;*/
         }
@@ -155,6 +217,7 @@
             z-index: 30;
             background-image: url(img/mga-img-bg-4-stars.png);
             pointer-events: none;
+            margin-top: -130px;
             /*top: 0;*/
         }
 
@@ -173,7 +236,7 @@
             position: relative;
             padding: 20px 20px 30px;
             background-size: cover;
-            background: url(img/mga-img-bg-91-card-film-1000x600.jpg) no-repeat;
+            background: url(img/mga-img-bg-91-card-film-1000x600.jpg);
             border-top: 1px solid #67624b;
             border-radius: 14px;
             /*border-radius: 140px;*/
@@ -193,6 +256,8 @@
             z-index: 5;
             top: 0px;
             width: 100%;
+            margin-top: 70px;
+            margin-bottom: 165px;
             /*height: auto;*/
             /*margin-top: 75px;*/
             background-position: right bottom;
@@ -202,6 +267,8 @@
             z-index: 15;
             top: 0px;
             width: 100%;
+            margin-top: -70px;
+            margin-bottom: 120px;
             /*height: 600px;*/
             background-position: left top;
         }
@@ -209,6 +276,8 @@
         .mga-section__card--contact {
             z-index: 25;
             top: 0px;
+            margin-top: -20px;
+            margin-bottom: 60px;
             /*width: 200px;*/
             /*height: 400px;*/
             background-position: center center
@@ -224,15 +293,17 @@
         }
 
         .mga-section__gallery-item {
-            float: left;
-            height: 200px;
-            margin: 30px;
+
+            width: 100%;
+            height: auto;
+            margin-top: 30px;
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 0 5px 2px #484236;
 
         }
 
+        /*
         @media only screen and (max-width: 1199px) {
             .mga-section__gallery-wrapper {
                 width: 700px;
@@ -257,7 +328,7 @@
         .mga-section__gallery-item--double {
             width: 440px;
         }
-
+*/
         .mga-section__artwork {
             width: 100%;
             height: auto;
@@ -381,6 +452,12 @@
             display: none;
         }
 
+        @media screen and (min-width: 992px) {
+            .u-lg-hover-shadow-left {
+                text-shadow: 2px 2px 3px gold;
+            }
+        }
+
         /* ================================ */
         /* ================================ */
 
@@ -412,9 +489,37 @@
     <header class="mga-section--header">
 
         <div class="row">
-            <div class="col-12">
-                <h1 class="mga_header__title">MY<span class="u-color-gold">GOLDEN</span>ART</h1>
+            <div class="col-lg-4 push-lg-4 mga-header__brand mb-3 mb-lg-0">
+
+                    <h1 class="mga_header__title">MY<span class="u-color-gold">GOLDEN</span>ART</h1>
+
+                    <div class="mga-header__logo-box">
+                        <img class="mga-header__logo-img mga-header__logo-img--m" src="img/logo/mga-img-logo-1-m-20.png"
+                             alt="M - MYGOLDENART">
+                        <img class="mga-header__logo-img mga-header__logo-img--g" src="img/logo/mga-img-logo-2-g-10.png"
+                             alt="G - MYGOLDENART">
+                        <img class="mga-header__logo-img mga-header__logo-img--a" src="img/logo/mga-img-logo-3-a-20.png"
+                             alt="A - MYGOLDENART">
+                    </div>
             </div>
+
+            <div class="col-sm-6 col-md-3 col-lg-2 pull-lg-4">
+                <h2 class="mga_header_nav-item text-center text-lg-right u-lg-hover-shadow-left ">About</h2>
+            </div>
+
+            <div class="col-sm-6 col-md-3 col-lg-2 pull-lg-4">
+                <h2 class="mga_header_nav-item text-center text-lg-right u-lg-hover-shadow-left ">Gallery</h2>
+            </div>
+
+
+            <div class="col-sm-6 col-md-3 col-lg-2">
+                <h2 class="mga_header_nav-item text-center text-lg-left">Contact</h2>
+            </div>
+
+            <div class="col-sm-6 col-md-3 col-lg-2">
+                <h2 class="mga_header_nav-item text-center text-lg-left">Language</h2>
+            </div>
+
         </div>
     </header><!--/mga-header-->
 
@@ -423,9 +528,11 @@
     <div class="mga-section mga-section--about">
         <div class="row">
 
+
+
             <div class="col-md-8 offset-md-2">
 
-                <div class="mga-section__card mga-section__card--contact">
+                <div class="mga-section__card mga-section__card--about">
                     <h2>About <span class="sr-only">with mygoldenart creator - Anna</span></h2>
 
                     <div class="mga-section__content">
@@ -461,42 +568,57 @@
     <div class="mga-section mga-section--gallery">
         <div class="row">
 
-            <div class="offset-md-1 col-md-10">
+            <div class="offset-md-2 col-md-8">
                 <div class="mga-section__card mga-section__card--gallery">
 
                     <h2 class="mga-section__heading">Gallery <span class="sr-only">with works of Anna</span></h2>
 
-                    <div class="mga-section__content clearfix">
+    <div class="row">
+        <div class="col-md-4 col-xs-6">
+             <div class="mga-section__gallery-item mga-section__gallery-item--single">
+                <img class="mga-section__artwork" src="img/art/mga-art-2-kolorowita.jpg" alt="Kolorowita">
+            </div>
+    </div>
 
-                        <div class="mga-section__gallery-wrapper">
-                            <div class="mga-section__gallery-item mga-section__gallery-item--single">
-                                <img class="mga-section__artwork" src="img/art/mga-art-2-kolorowita.jpg"
-                                     alt="Kolorowita">
-                            </div>
-
+        <div class="col-md-4 col-xs-6">
                             <div class="mga-section__gallery-item mga-section__gallery-item--single">
                                 <img class="mga-section__artwork" src="img/art/mga-art-1-antysieci.jpg" alt="Antysieci">
                             </div>
+        </div>
 
+        <div class="col-md-4 col-xs-6">
                             <div class="mga-section__gallery-item mga-section__gallery-item--single">
                                 <img class="mga-section__artwork" src="img/art/mga-art-3-pegaz.jpg" alt="Pegaz">
                             </div>
+        </div>
 
+        <div class="col-md-4 col-xs-6">
                             <div class="mga-section__gallery-item mga-section__gallery-item--single">
                                 <img class="mga-section__artwork" src="img/art/mga-art-1-jesienna.jpg" alt="Jesienna">
                             </div>
+        </div>
 
+        <div class="col-md-4 col-xs-6">
                             <div class="mga-section__gallery-item mga-section__gallery-item--single">
-                                <img class="mga-section__artwork" src="img/art/mga-art-3-nacirema.jpg" alt="Nacirema">
+                                <img class="mga-section__artwork" src="img/art/mga-art-3-flaga.jpg" alt="Nacirema">
                             </div>
+        </div>
 
+        <div class="col-md-4 col-xs-6">
                             <div class="mga-section__gallery-item mga-section__gallery-item--single">
-                                <img class="mga-section__artwork" src="img/art/mga-art-2-muchomorki.jpg"
-                                     alt="Muchomorki">
+                                <img class="mga-section__artwork" src="img/art/mga-art-2-muchomorki.jpg" alt="Muchomorki">
                             </div>
-                        </div>
+        </div>
+    </div>
 
-                    </div>
+
+
+
+
+
+
+
+
                 </div>
             </div>
         </div>
@@ -519,24 +641,21 @@
                 <div class="row">
 
 
-                    <div class="col-md-4">
-                        <div class="mga-section__card mga-section__card--contact mga-section__card--bookmark">
-                            <h2>About <span class="sr-only">with mygoldenart creator - Anna</span></h2>
-                        </div>
+                     <div class="col-md-8 offset-md-2">
+
+                <div class="mga-section__card mga-section__card--contact">
+                    <h2>Contact <span class="sr-only">with mygoldenart creator - Anna</span></h2>
+
+                    <div class="mga-section__content">
+                        <p class="mga-section__text mga_section__overline">E-mail address: ann@mygoldenart.pl</p>
+                        <p class="mga-section__text">Telephone: +48 693 148 148</p>
+                        <p class="mga-section__text">Facebook: @MyGoldenArt</p>
                     </div>
 
-                    <div class="col-md-4">
-                        <div class="mga-section__card mga-section__card--contact mga-section__card--bookmark">
-                            <h2>Gallery <span class="sr-only">with mygoldenart creator - Anna</span></h2>
-                        </div>
-                    </div>
 
-                    <div class="col-md-4">
-                        <div class="mga-section__card mga-section__card--contact mga-section__card--bookmark">
-                            <h2>Contact <span class="sr-only">with mygoldenart creator - Anna</span></h2>
+                </div>
 
-                        </div>
-                    </div>
+            </div>
 
                 </div>
             </div>
