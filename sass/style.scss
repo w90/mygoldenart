@@ -1,0 +1,451 @@
+ body {
+            background-color: black;
+            transition: all 1s ease;
+        }
+
+        /* Navbar ========================= */
+        /* ================================ */
+        .mga-navbar {
+            width: 100%;
+            text-align: center;
+
+            &__nav {
+                padding: 0;
+            }
+
+            &__nav-item {
+                display: inline-block;
+                margin: 0 1rem;
+            }
+
+            &__nav-link {
+                font-size: 1rem;
+                font-family: 'Raleway', sans-serif;
+                color: gray;
+                text-decoration: none;
+                text-transform: uppercase;
+                &:hover {
+                    cursor: pointer;
+                    color: gold;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .mga-header {
+
+            &_nav-item {
+                font-size: 1.25rem;
+                line-height: 2rem;
+                color: rgba(255, 255, 255, 0);
+                font-family: 'Raleway', sans-serif;
+                text-shadow: -2px 2px 3px gold;
+                text-transform: uppercase;
+                filter: blur(.5px);
+                transition: all .4s ease;
+                opacity: .7;
+
+                &:hover {
+                    color: rgba(255, 255, 255, 1);
+                    cursor: pointer;
+                    opacity: 1;
+                }
+            }
+
+            /* Header with Logo =============== */
+            /* ================================ */
+
+            &__logo-box {
+                position: absolute;
+                width: 200px;
+                height: 200px;
+                top: -60px;
+                transition: all .4s ease;
+                transform: translateX(-50%);
+                left: 50%;
+                filter: blur(4px);
+                pointer-events: all;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    z-index: 15;
+                    top: 0;
+                    left: 0;
+                    width: 200px;
+                    height: 200px;
+                    background: url(img/logo/mga-img-logo-4-mask-15.png) center center no-repeat;
+                    background-size: contain;
+                }
+            }
+
+            &__logo-img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 200px;
+                height: 200px;
+                transition: all 1s ease;
+
+                &--m {
+                    width: 200px;
+                    height: 200px;
+                    z-index: 20;
+                }
+
+                &--g {
+                    width: 200px;
+                    height: 200px;
+                    z-index: 10;
+                    transform: rotate(0deg);
+                }
+
+                &--a {
+                    width: 200px;
+                    height: 200px;
+                    z-index: 20;
+                }
+            }
+
+            &__title {
+                text-align: center;
+                color: white;
+                font-size: 2rem;
+                font-family: 'Raleway', sans-serif;
+                text-shadow: -2px 2px 3px gold;
+                position: relative;
+                filter: blur(1px);
+                z-index: 50;
+                transition: all .4s ease;
+                opacity: 1;
+            }
+
+            .mga-header__brand:hover .mga-header__logo-img--g,
+            .mga-header__logo-box:hover .mga-header__logo-img--g {
+                transform: rotate(418deg);
+            }
+
+            .mga-header__brand:hover .mga-header__title {
+                opacity: .3;
+                filter: blur(2px);
+            }
+
+            .mga-header__brand:hover .mga-header__logo-box {
+                filter: blur(0);
+            }
+
+            /*.mga-header__title:hover {*/
+            /*filter: blur(0);*/
+            /*}*/
+
+            .mga-section--footer-cover .mga-header__logo-box {
+                top: -35px;
+                filter: blur(1px);
+            }
+
+            .mga-header__title:hover,
+            .mga-header__logo-box:hover {
+                filter: blur(0);
+                /*transform: translateY(10px);*/
+            }
+
+        }
+        /* Sections======================== */
+        /* ================================ */
+
+        .mga-section {
+            position: relative;
+            top: 0;
+            width: 100%;
+            /*min-height: 300px;*/
+            background-size: contain;
+            background: transparent no-repeat top;
+            filter: brightness(70%);
+            transition: all .4s ease
+
+        }
+
+        .mga-section:hover {
+            filter: brightness(100%);
+        }
+
+        .mga-section--header {
+            margin-top: 90px;
+            margin-bottom: 45px;
+            /*margin-bottom: 100px;*/
+        }
+
+        .mga-section--about {
+            background-image: url(img/mga-img-bg-1-glitter.png);
+            margin-top: 70px;
+            /*margin-bottom: 165px;*/
+            z-index: 0;
+            /*height: 450px;*/
+            /*top: 0px;*/
+            /*margin-bottom: -210px;*/
+        }
+
+        .mga-section--gallery {
+            background-image: url(img/mga-img-bg-2-wood.png);
+            margin-top: -235px;
+            z-index: 10;
+            /*height: 800px;*/
+            /*margin-bottom: -205px;*/
+        }
+
+        .mga-section--contact {
+            background-image: url(img/mga-img-bg-3-brush.png);
+            z-index: 20;
+            margin-top: -205px;
+            /*height: 500px;*/
+            /*margin-bottom: -110px;*/
+        }
+
+        .mga-section--footer-cover {
+            height: 450px;
+            z-index: 30;
+            background-image: url(img/mga-img-bg-4-stars.png);
+            pointer-events: none;
+            margin-top: -130px;
+            /*top: 0;*/
+        }
+
+        .mga-section__content {
+            opacity: 1;
+        }
+
+        .mga-section__content--active {
+            opacity: 1;
+        }
+
+        /* Card =========================== */
+        /* ================================ */
+
+        .mga-section__card {
+            position: relative;
+            padding: 20px 20px 30px;
+            background-size: cover;
+            background: url(img/mga-img-bg-91-card-film-1000x600.jpg);
+            border-top: 1px solid #67624b;
+            border-radius: 14px;
+            /*border-radius: 140px;*/
+            box-shadow: 0px 0px 20px 0px black;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+
+        }
+
+        .mga-section__card--bookmark {
+            height: 260px;
+            border-radius: 50%;
+        }
+
+        .mga-section__card--about {
+            z-index: 5;
+            top: 0px;
+            width: 100%;
+            margin-top: 70px;
+            margin-bottom: 165px;
+            /*height: auto;*/
+            /*margin-top: 75px;*/
+            background-position: right bottom;
+        }
+
+        .mga-section__card--gallery {
+            z-index: 15;
+            top: 0px;
+            width: 100%;
+            margin-top: -70px;
+            margin-bottom: 120px;
+            /*height: 600px;*/
+            background-position: left top;
+        }
+
+        .mga-section__card--contact {
+            z-index: 25;
+            top: 0px;
+            margin-top: -20px;
+            margin-bottom: 60px;
+            /*width: 200px;*/
+            /*height: 400px;*/
+            background-position: center center
+        }
+
+        /* Card - Gallery ================= */
+        /* ================================ */
+
+        .mga-section__gallery-wrapper {
+            text-align: center;
+            margin: 0 auto;
+            width: 760px;
+        }
+
+        .mga-section__gallery-item {
+
+            width: 100%;
+            height: auto;
+            margin-top: 30px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 5px 2px #484236;
+
+        }
+
+        /*
+        @media only screen and (max-width: 1199px) {
+            .mga-section__gallery-wrapper {
+                width: 700px;
+                padding-left: 10px;
+            }
+
+            .mga-section__gallery-item {
+                margin: 10px;
+            }
+        }
+
+        @media only screen and (max-width: 991px) {
+            .mga-section__gallery-item:nth-child(2) {
+                margin-right: 30px;
+            }
+        }
+
+        .mga-section__gallery-item--single {
+            width: 200px;
+        }
+
+        .mga-section__gallery-item--double {
+            width: 440px;
+        }
+*/
+        .mga-section__artwork {
+            width: 100%;
+            height: auto;
+        }
+
+        .mga-section__heading {
+            text-align: center;
+            color: gold;
+            font-size: 2rem;
+            font-family: 'Raleway', sans-serif;
+            font-weight: bold;
+            text-shadow: 3px 2px 11px rgba(255, 215, 0, 0.50);
+        }
+
+        .mga_section__overline {
+            border-top: 1px solid gold;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            padding-top: 1rem;
+            margin-top: 1rem;
+        }
+
+        .mga_section__underline {
+            border-bottom: 1px solid gold;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .mga-section__text {
+            margin-bottom: 0;
+            text-align: center;
+            color: white;
+            font-size: 1.5rem;
+            font-family: 'Raleway', sans-serif;
+            text-shadow: 3px 2px 11px rgba(255, 255, 255, 0.50);
+        }
+
+        /* Additional Graphics ============ */
+        /* ================================ */
+
+        .mga-section__graphics {
+            position: absolute;
+            top: 65px;
+            left: calc(50% - 77px);
+            width: 75px;
+        }
+
+        .mga-section__graphics-heart {
+            width: 100%;
+            height: auto;
+            transition: all .5s ease;
+            filter: brightness(.8);
+
+        }
+
+        .mga-section__graphics-heart:hover {
+            /*transform: rotate(-3deg);*/
+            cursor: crosshair;
+            filter: brightness(1);
+
+        }
+
+        .mga-section__text--heart {
+            transition: all .5s ease;
+            font-weight: 300;
+        }
+
+        .mga-section__text--heart:hover {
+            color: red;
+            font-weight: bold;
+            cursor: crosshair;
+            text-shadow: 3px 2px 21px red;
+        }
+
+        /* Shadows ======================== */
+        /* ================================ */
+
+        .mga-section--bg-side-shadows {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mga-section--bg-side-shadows::before {
+            -webkit-box-shadow: inset 75px 0px 40px -40px rgba(0, 0, 0, 1);
+            -moz-box-shadow: inset 75px 0px 40px -40px rgba(0, 0, 0, 1);
+            box-shadow: inset 75px 0px 40px -40px rgba(0, 0, 0, 1);
+            content: '';
+            position: absolute;
+            z-index: 40;
+            top: 0;
+            left: 14px;
+            width: 65px;
+            height: 100%;
+            display: inline-block;
+        }
+
+        .mga-section--bg-side-shadows::after {
+            -webkit-box-shadow: inset -75px 0px 40px -40px rgba(0, 0, 0, 1);
+            -moz-box-shadow: inset -75px 0px 40px -40px rgba(0, 0, 0, 1);
+            box-shadow: inset -75px 0px 40px -40px rgba(0, 0, 0, 1);
+            content: '';
+            position: absolute;
+            z-index: 40;
+            top: 0;
+            right: 14px;
+            width: 65px;
+            height: 100%;
+            display: inline-block;
+        }
+
+        /* Utilities ====================== */
+        /* ================================ */
+
+        .u-color-gold {
+            color: gold;
+        }
+
+        .u-hidden {
+            display: none;
+        }
+
+        @media screen and (min-width: 992px) {
+            .u-lg-hover-shadow-left {
+                text-shadow: 2px 2px 3px gold;
+            }
+        }
+
+        /* ================================ */
+        /* ================================ */
