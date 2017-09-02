@@ -8,6 +8,12 @@
     <link href="style.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenLite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TimelineLite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/easing/EasePack.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/plugins/CSSPlugin.min.js"></script>
+
+
 </head>
 <body>
 
@@ -36,29 +42,32 @@
         <div class="row">
             <div class="col-lg-4 push-lg-4 mga-header__brand mb-3 mb-lg-0">
 
-                    <h1 class="mga-header__title">MY<span class="u-color-gold">GOLDEN</span>ART</h1>
+                <h1 class="mga-header__title">MY<span class="u-color-gold">GOLDEN</span>ART</h1>
 
-                    <div class="mga-header__logo-box">
-                        <img class="mga-header__logo-img mga-header__logo-img--m" src="img/logo/mga-img-logo-1-m-20.png"
-                             alt="M - MYGOLDENART">
-                        <img class="mga-header__logo-img mga-header__logo-img--g" src="img/logo/mga-img-logo-2-g-10.png"
-                             alt="G - MYGOLDENART">
-                        <img class="mga-header__logo-img mga-header__logo-img--a" src="img/logo/mga-img-logo-3-a-20.png"
-                             alt="A - MYGOLDENART">
-                    </div>
+                <div class="mga-header__logo-box">
+                    <img class="mga-header__logo-img mga-header__logo-img--m" src="img/logo/mga-img-logo-1-m-20.png"
+                         alt="M - MYGOLDENART">
+                    <img class="mga-header__logo-img mga-header__logo-img--g" src="img/logo/mga-img-logo-2-g-10.png"
+                         alt="G - MYGOLDENART">
+                    <img class="mga-header__logo-img mga-header__logo-img--a" src="img/logo/mga-img-logo-3-a-20.png"
+                         alt="A - MYGOLDENART">
+                </div>
             </div>
 
             <div class="col-sm-6 col-md-3 col-lg-2 pull-lg-4">
-                <h2 class="mga-header__nav-item  text-sm-right text-xs-center u-lg-hover-shadow-left ">About</h2>
+                <h2 class="mga-header__nav-item text-sm-right text-xs-center u-lg-hover-shadow-left" data-link="about">
+                    About</h2>
             </div>
 
             <div class="col-sm-6 col-md-3 col-lg-2 pull-lg-4">
-                <h2 class="mga-header__nav-item mgatext-xs-center text-sm-left text-md-center u-lg-hover-shadow-left ">Gallery</h2>
+                <h2 class="mga-header__nav-item text-xs-center text-sm-left text-md-center text-lg-right u-lg-hover-shadow-left"
+                    data-link="gallery">Gallery</h2>
             </div>
 
 
             <div class="col-sm-6 col-md-3 col-lg-2">
-                <h2 class="mga-header__nav-item text-xs-center text-sm-right text-md-center text-lg-left">Contact</h2>
+                <h2 class="mga-header__nav-item text-xs-center text-sm-right text-md-center text-lg-left"
+                    data-link="contact">Contact</h2>
             </div>
 
             <div class="col-sm-6 col-md-3 col-lg-2">
@@ -72,7 +81,6 @@
 
     <div class="mga-section mga-section--about">
         <div class="row">
-
 
 
             <div class="col-md-8 offset-md-2">
@@ -118,50 +126,45 @@
 
                     <h2 class="mga-section__heading">Gallery <span class="sr-only">with works of Anna</span></h2>
 
-    <div class="row mga-section__overline">
-        <div class="col-md-4 col-xs-6">
-             <div class="mga-section__gallery-item mga-section__gallery-item--single">
-                <img class="mga-section__artwork" src="img/art/mga-art-2-kolorowita.jpg" alt="Kolorowita">
-            </div>
-    </div>
+                    <div class="row mga-section__overline">
+                        <div class="col-md-4 col-xs-6">
+                            <div class="mga-section__gallery-item mga-section__gallery-item--single">
+                                <img class="mga-section__artwork" src="img/art/mga-art-2-kolorowita.jpg"
+                                     alt="Kolorowita">
+                            </div>
+                        </div>
 
-        <div class="col-md-4 col-xs-6">
+                        <div class="col-md-4 col-xs-6">
                             <div class="mga-section__gallery-item mga-section__gallery-item--single">
                                 <img class="mga-section__artwork" src="img/art/mga-art-1-antysieci.jpg" alt="Antysieci">
                             </div>
-        </div>
+                        </div>
 
-        <div class="col-md-4 col-xs-6">
+                        <div class="col-md-4 col-xs-6">
                             <div class="mga-section__gallery-item mga-section__gallery-item--single">
                                 <img class="mga-section__artwork" src="img/art/mga-art-3-pegaz.jpg" alt="Pegaz">
                             </div>
-        </div>
+                        </div>
 
-        <div class="col-md-4 col-xs-6">
+                        <div class="col-md-4 col-xs-6">
                             <div class="mga-section__gallery-item mga-section__gallery-item--single">
                                 <img class="mga-section__artwork" src="img/art/mga-art-1-jesienna.jpg" alt="Jesienna">
                             </div>
-        </div>
+                        </div>
 
-        <div class="col-md-4 col-xs-6">
+                        <div class="col-md-4 col-xs-6">
                             <div class="mga-section__gallery-item mga-section__gallery-item--single">
                                 <img class="mga-section__artwork" src="img/art/mga-art-3-flaga.jpg" alt="Nacirema">
                             </div>
-        </div>
+                        </div>
 
-        <div class="col-md-4 col-xs-6">
+                        <div class="col-md-4 col-xs-6">
                             <div class="mga-section__gallery-item mga-section__gallery-item--single">
-                                <img class="mga-section__artwork" src="img/art/mga-art-2-muchomorki.jpg" alt="Muchomorki">
+                                <img class="mga-section__artwork" src="img/art/mga-art-2-muchomorki.jpg"
+                                     alt="Muchomorki">
                             </div>
-        </div>
-    </div>
-
-
-
-
-
-
-
+                        </div>
+                    </div>
 
 
                 </div>
@@ -186,21 +189,22 @@
                 <div class="row">
 
 
-                     <div class="col-md-8 offset-md-2">
+                    <div class="col-md-8 offset-md-2">
 
-                <div class="mga-section__card mga-section__card--contact">
-                    <h2>Contact <span class="sr-only">with mygoldenart creator - Anna</span></h2>
+                        <div class="mga-section__card mga-section__card--contact">
+                            <h2>Contact <span class="sr-only">with mygoldenart creator - Anna</span></h2>
 
-                    <div class="mga-section__content">
-                        <p class="mga-section__text mga-section__overline">E-mail address: ann@mygoldenart.pl</p>
-                        <p class="mga-section__text">Telephone: +48 693 148 148</p>
-                        <p class="mga-section__text">Facebook: @MyGoldenArt</p>
+                            <div class="mga-section__content">
+                                <p class="mga-section__text mga-section__overline">E-mail address:
+                                    ann@mygoldenart.pl</p>
+                                <p class="mga-section__text">Telephone: +48 693 148 148</p>
+                                <p class="mga-section__text">Facebook: @MyGoldenArt</p>
+                            </div>
+
+
+                        </div>
+
                     </div>
-
-
-                </div>
-
-            </div>
 
                 </div>
             </div>
@@ -228,15 +232,22 @@
     </div><!--/mga-footer-cover-->
 
     <div class="mga-lightbox__wrapper">
-        <div class="mga-lightbox__arrow"></div>
 
-<div class="mga-lightbox__photo">
-                <img class="" src="img/art/mga-art-2-kolorowita.jpg" alt="Kolorowita">
+
+        <div class="mga-lightbox__photo">
+
+            <img class="" src="img/art/mga-art-2-kolorowita.jpg" alt="Kolorowita">
+
+            <div class="mga-lightbox__arrow mga-lightbox__arrow--previous"></div>
+            <div class="close-icon"></div>
+            <div class="mga-lightbox__arrow"></div>
 
         </div>
     </div>
 
 </div><!--/container-->
+
+<script src="./js/main.js"></script>
 
 </body>
 </html>

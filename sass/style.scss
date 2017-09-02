@@ -125,20 +125,18 @@ body {
   /*filter: blur(0);*/
   /*}*/
 
-
-
 }
 
-  .mga-section--footer-cover .mga-header__logo-box {
-    top: -35px;
-    filter: blur(2px);
-  }
+.mga-section--footer-cover .mga-header__logo-box {
+  top: -35px;
+  filter: blur(2px);
+}
 
-  .mga-header__title:hover,
-  .mga-header__logo-box:hover {
-    filter: blur(0);
-    /*transform: translateY(10px);*/
-  }
+.mga-header__title:hover,
+.mga-header__logo-box:hover {
+  filter: blur(0);
+  /*transform: translateY(10px);*/
+}
 
 .mga-header__brand:hover .mga-header__logo-img--g,
 .mga-header__logo-box:hover .mga-header__logo-img--g {
@@ -165,7 +163,7 @@ body {
   background-size: contain;
   background: transparent no-repeat top;
   filter: brightness(70%);
-  transition: all .4s ease;
+  //transition: all .4s ease;
 
   &:hover {
     filter: brightness(100%);
@@ -224,6 +222,8 @@ body {
 
   &__card {
     position: relative;
+    max-height: 100vh;
+    transform: translateY(0);
     padding: 20px 20px 30px;
     background-size: cover;
     background: url(img/mga-img-bg-91-card-film-1000x600.jpg);
@@ -234,6 +234,12 @@ body {
     text-align: center;
     color: white;
     overflow: hidden;
+    //transition: all .8s ease-in;
+
+    &--active {
+      max-height: 0;
+      transform: translateY(50vh);
+    }
 
     &--bookmark {
       height: 260px;
@@ -423,7 +429,7 @@ body {
       position: absolute;
       z-index: 40;
       top: 0;
-      left: 14px;
+      left: 3px;
       width: 65px;
       height: 100%;
       display: inline-block;
@@ -437,7 +443,7 @@ body {
       position: absolute;
       z-index: 40;
       top: 0;
-      right: 14px;
+      right: 3px;
       width: 65px;
       height: 100%;
       display: inline-block;
@@ -446,8 +452,11 @@ body {
 
 }
 
-.mga-lightbox__wrapper {
+.mga-lightbox {
 
+  &__wrapper {
+
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -455,47 +464,93 @@ body {
     height: 100%;
     z-index: 60;
 
-  &:before {
-    position: fixed;
-    content: '';
-    width: 100%;
-    height: 100%;
-    background-color: #000000;
-    opacity: .7;
+    &:before {
+      position: fixed;
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-color: #000000;
+      opacity: .8;
+    }
   }
 
-  .mga-lightbox__photo {
+  &__photo {
     position: relative;
     top: 50%;
-    transform: translateY( -50% );
+    transform: translateY(-50%);
     text-align: center;
     opacity: 1;
     z-index: 70;
 
     img {
       position: relative;
-
-      box-shadow: 30px 30px 0px 0px gold;
+      display: block;
+      margin: 0 auto 30px;
+      box-shadow: 10px 10px 0px 0px gold;
       transition: all .3s ease;
 
       &:hover {
-        box-shadow: 30px 30px 0px 0px white;
+        box-shadow: 10px 10px 0px 0px white;
 
       }
     }
   }
 
-  .mga-lightbox__arrow {
+  &__arrow {
+    display: inline-block;
+    z-index: 70;
     width: 0;
-height: 0;
-border-style: solid;
-border-width: 35px 0 35px 35px;
-border-color: transparent transparent transparent #ffd900;
+    height: 0;
+    border-style: solid;
+    border-width: 35px 0 35px 35px;
+    border-color: transparent transparent transparent #ffd900;
+    opacity: .8;
+
+    &:hover {
+      opacity: 1;
+      cursor: pointer;
+    }
+
+    &--previous {
+      border-color: transparent #ffd900 transparent transparent;
+
+      border-width: 35px 35px 35px 0px;
+
+    }
 
   }
 
 }
 
+.close-icon {
+  position: relative;
+  display: inline-block;
+  width: 65px;
+  height: 75px;
+  opacity: .8;
+  margin: 0 40px;
+
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  &:before,
+  &:after {
+    position: absolute;
+    content: ' ';
+    height: 82px;
+    width: 8px;
+    background-color: gold;
+  }
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
+  }
+
+}
 
 /* Utilities ====================== */
 /* ================================ */
